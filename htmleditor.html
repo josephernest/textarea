@@ -1,0 +1,19 @@
+<html>
+<head>
+<meta charset="utf8">
+<style type="text/css">
+* { padding: 0; margin: 2px; outline: 0; }
+#a { position: fixed; left: 0; top: 0; width: 50%; height: 100%; }
+#b { position: fixed; left: 50%; top: 0; width: 50%; height: 100%; border-left: 1px solid #eee; }
+</style>
+</head>
+<body>
+<div id="a" contenteditable></div>
+<div id="b" contenteditable></div>
+<script type="text/javascript">
+document.getElementById("a").focus();
+document.getElementById("a").oninput = function() { document.getElementById("b").innerText = document.getElementById("a").innerHTML; };
+document.getElementById("b").oninput = function() { document.getElementById("a").innerHTML = document.getElementById("b").innerText; };
+</script>
+</body>
+</html>
